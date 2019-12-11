@@ -1,0 +1,73 @@
+package com.shops;
+
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.ArrayList;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import com.mysql.jdbc.CommunicationsException;
+
+
+@ManagedBean
+@SessionScoped
+public class StoresController {
+	ArrayList<Store> store;
+	public ArrayList<Store> getStore() {
+		return store;
+	}
+
+	public void setStore(ArrayList<Store> store) {
+		this.store = store;
+	}
+
+	DAO dao;
+	
+	
+	public StoresController() {
+		super();
+		try {
+			dao = new DAO();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public String loadStores() {
+		System.out.println("In loadstores()");
+		try {
+			store = dao.loadStores();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public String addStore(Store s) {
+		try {
+			dao.addStore(s);
+			return "ManageStores";
+		} catch (SQLIntegrityConstraintViolationException e) {
+			FacesMessage message = 
+					new FacesMessage("Error: Store ID already exists");
+					FacesContext.getCurrentInstance().addMessage(null, message);
+		} catch (CommunicationsException e) {
+			FacesMessage message = 
+					new FacesMessage("Error: Can't communicate with store DB");
+					FacesContext.getCurrentInstance().addMessage(null, message);
+		}catch (Exception e) {
+			FacesMessage message = 
+					new FacesMessage("Error: " + e.getMessage());
+					FacesContext.getCurrentInstance().addMessage(null, message);
+
+			e.printStackTrace();
+		}
+		return null;
+	}	
+	
+
+}
