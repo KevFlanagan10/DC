@@ -51,7 +51,9 @@
  	  		<f:facet name="header">Price</f:facet>
  	  		#{s.price}
 		</h:column>
-		
+		<h:column>
+ 	  		<h:commandLink value="Delete" action="#{storeProductsController.loadStoreProducts(s.id)}"/><f:facet name="header">Action</f:facet>
+		</h:column>
 		
 		
   	</h:dataTable>

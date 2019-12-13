@@ -5,22 +5,22 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class Product {
 	
-	int sid;
 	int pid;
+	int sid;
 	String prodName;
 	double price;
-	
-	public int getSid() {
-		return sid;
-	}
-	public void setSid(int sid) {
-		this.sid = sid;
-	}
+
 	public int getPid() {
 		return pid;
 	}
 	public void setPid(int pid) {
 		this.pid = pid;
+	}
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
 	}
 	public String getProdName() {
 		return prodName;

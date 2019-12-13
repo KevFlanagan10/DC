@@ -1,9 +1,10 @@
 package com.shops;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class HeadOffice {
+	
 	int id;
 	String location;
 	

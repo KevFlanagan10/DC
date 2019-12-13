@@ -128,3 +128,4 @@ java.nio.file.AccessDeniedException: U:\.probe-aafaf7df-15a6-487f-9f52-6d11a0e76
 	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:333) [org.eclipse.ui.workbench_3.115.0.v20190521-1602.jar:na]
 	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:300) [org.eclipse.ui.workbench_3.115.0.v20190521-1602.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2019-12-13 11:59:14,720 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.

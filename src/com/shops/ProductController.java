@@ -38,18 +38,8 @@ public class ProductController {
 			e.printStackTrace();
 		}
 	}
-	
-	//delete button
-//	public void delete(int pid) {
-//		System.out.println(pid);
-//		try {
-//			dao.delete(pid);
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
 
+	
 	public ArrayList<Product> getProducts() {
 		return products;
 	}
